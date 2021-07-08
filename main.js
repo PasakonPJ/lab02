@@ -3,7 +3,7 @@ const app = Vue.createApp({
         return {
             cart: 0,
             premium: true,
-            details:['50% cotton', '30% wool', '20% polyester']
+            // details:['50% cotton', '30% wool', '20% polyester']
         }
     },
   
