@@ -43,7 +43,7 @@ app.component('product-display', {
     },
     methods: {
         addToCart() {
-            this.cart += 1
+            this.$emit('add-to-cart')
         },
         updateImage(variantImage) {
             this.image = variantImage
@@ -58,7 +58,6 @@ app.component('product-display', {
     },
     computed: {
         title() {
-            //return this.brand + ' ' + this.product
             if (this.variants[this.selectedVariant].quantity > 0) {
                 return this.brand + ' ' + this.product + ' is on sale'
             } else {
@@ -87,7 +86,7 @@ app.component('product-detail', {
     props: {
         details: {
             type: Array,
-            required: true
+          
         }
     },
     template:

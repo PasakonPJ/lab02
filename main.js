@@ -5,6 +5,10 @@ const app = Vue.createApp({
             premium: true,
             details:['50% cotton', '30% wool', '20% polyester']
         }
-    },
+    },methods:{
+        updateCart(){
+            this.cart +=1;
+        }
+    }
   
 })
