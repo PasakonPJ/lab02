@@ -17,12 +17,14 @@
         <div class="cart">Cart({{ cart.length }})</div>
         <product-display :premium="premium" @add-to-cart="updateCart" @delete-to-cart="deleteCart"></product-display>
         <product-detail :details="details"></product-detail>
-
+        
     </div>
 
     <!-- Import Js -->
     <script src="./main.js "></script>
     <script src="./components/ProductDisplay.js "></script>
+    <script src="./components/ReviewForm.js "></script>
+    <script src="./components/ReviewList.js "></script>
     <script>
         const mountedApp = app.mount('#app')
     </script>
