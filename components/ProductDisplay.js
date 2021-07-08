@@ -21,7 +21,13 @@ app.component('product-display', {
                 <p v-else>Out of Stock</p>
                 <p>Shipping: {{shipping}}</p>
                 <div v-for="(variant,index) in variants" :key="variant.id" @mouseover="updateVariant(index)" class="color-circle":style="{backgroundColor:variant.color}"></div>
+                <p>   
                 <button class=" button " :disabled='!inStock':class="{disabledButton: !inStock}" @click="addToCart ">Add to Cart</button>
+                    
+                        
+                <button class=" button " :disabled='!inStock':class="{disabledButton: !inStock}" @click="DeleteToCart ">Delete to Cart</button>
+                </p>       
+                  
             </div>
         </div>
     </div>`
@@ -43,7 +49,10 @@ app.component('product-display', {
     },
     methods: {
         addToCart() {
-            this.$emit('add-to-cart',this.variants[this.selectedVariant].id)
+            this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
+        },
+        DeleteToCart() {
+            this.$emit('delete-to-cart', this.variants[this.selectedVariant].id)
         },
         updateImage(variantImage) {
             this.image = variantImage
@@ -86,7 +95,7 @@ app.component('product-detail', {
     props: {
         details: {
             type: Array,
-          
+
         }
     },
     template:
