@@ -43,7 +43,7 @@ app.component('product-display', {
     },
     methods: {
         addToCart() {
-            this.$emit('add-to-cart')
+            this.$emit('add-to-cart',this.variants[this.selectedVariant].id)
         },
         updateImage(variantImage) {
             this.image = variantImage
